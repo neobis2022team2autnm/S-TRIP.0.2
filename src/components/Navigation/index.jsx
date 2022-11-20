@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { TfiMapAlt } from "react-icons/tfi";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoRestaurantOutline } from 'react-icons/io5'
@@ -25,7 +25,7 @@ const Navigation = () => {
     <div className="navigation">
       <div className="navigation__container">
         <div className='w-100%'>
-          <div className="px-4 relative">
+          <div className="px-4 relative cursor-pointer">
             <SlArrowRight onClick={sliderRight} className={!nav ? "text-2xl  text-[#607D8B] absolute mr-auto left-0 right-0 mt-[1.5%] ml-[95%] drop-shadow-2xl md:hidden " : "hidden"} />
             <ul id="slider" className=" h-full w-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide  md:grid md:grid-cols-4  md:ml-auto md:px-4">
               <div className="inline-block group">

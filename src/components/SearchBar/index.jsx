@@ -1,5 +1,6 @@
 import { BiSearchAlt2 as Search } from "react-icons/bi";
 import bg from '../../assets/images/bg-search.png';
+
 const SearchBar = () => {
   return (
     <div className="searchbar">
