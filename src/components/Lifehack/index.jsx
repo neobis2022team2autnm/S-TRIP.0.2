@@ -53,8 +53,7 @@ const Lifehack = () => {
                   <img class="lg:h-72 md:h-48 w-full object-cover object-center"
                     src="https://picsum.photos/id/1016/720/400" alt="blog" />
                   <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
-                    <h2 class="text-base font-medium text-indigo-300 mb-1">October 29,
-                      2021</h2>
+                    
                     <h1 class="text-2xl font-semibold mb-3">Mountains are alone</h1>
                     <p class="leading-relaxed mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Aperiam modi, expedita quos doloremque autem ipsum itaque incidunt ipsam reprehenderit
@@ -92,8 +91,7 @@ const Lifehack = () => {
                   <img class="lg:h-72 md:h-48 w-full object-cover object-center"
                     src="https://picsum.photos/id/1011/720/400" alt="blog" />
                   <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
-                    <h2 class="text-base font-medium text-indigo-300 mb-1">October 29,
-                      2021</h2>
+                   
                     <h1 class="text-2xl font-semibold mb-3">Lakes are silent</h1>
                     <p class="leading-relaxed mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Aperiam modi, expedita quos doloremque autem ipsum itaque incidunt ipsam reprehenderit
