@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { CgKeyhole } from 'react-icons/cg';
 import { RiBookletLine } from 'react-icons/ri';
@@ -25,6 +26,9 @@ const languages = [
 ];
 
 const Navbar = () => {
+
+  const { isLogged, user } = useSelector((state) => state.auth);
+
 
   const [menu, setMenu] = useState(true);
   const [dropdown, setDropdown] = useState(false);
@@ -76,7 +80,8 @@ const Navbar = () => {
             </button>
             {
               <ModalPopap logo={logo} active={modalActive} setActive={setModalActive}>
-                Hello
+                {/* <Singin/> */}
+                Авторизация
               </ModalPopap>
             }
           </ul>
