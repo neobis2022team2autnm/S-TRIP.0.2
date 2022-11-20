@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import Navbar from "./components/Navbar";
 import Navigation from './components/Navigation';
+import SearchBar from './components/SearchBar';
 import Signin from "./components/SingIn";
 
 function App() {
 
-  const [active, setActive] = useState(false)
-
   return (
     <div className="App">
       <Navbar />
-      <Navigation/>
+      <Navigation />
+      <SearchBar/>
       Hello Wolrd
     </div>
   );
