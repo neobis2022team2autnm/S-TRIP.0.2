@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { LoginByGoogle } from "../../port";
 
-export const Signin = ({ status, active, setActive }) => {
+export const Singin = ({ status, active, setActive }) => {
   const googleBtn = useRef(null);
 
   const handleCallbackResponse = (response) => {
@@ -37,4 +37,4 @@ export const Signin = ({ status, active, setActive }) => {
   );
 };
 
-export default Signin;
+export default Singin;

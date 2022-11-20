@@ -5,8 +5,11 @@ import { CgKeyhole } from 'react-icons/cg';
 import { RiBookletLine } from 'react-icons/ri';
 import { TbNews } from 'react-icons/tb';
 import { IoLanguageSharp } from 'react-icons/io5';
-import { BsFillDoorOpenFill } from 'react-icons/bs'
+import { BsFillDoorOpenFill } from 'react-icons/bs';
+import logo from '../../assets/images/logos/logo.medium.png'
 import Dropdown from '../Dropdown';
+import ModalPopap from '../Modal-Popap';
+import Singin from '../SingIn';
 
 const languages = [
   {
@@ -25,6 +28,7 @@ const Navbar = () => {
 
   const [menu, setMenu] = useState(true);
   const [dropdown, setDropdown] = useState(false);
+  const [modalActive, setModalActive] = useState(false);
 
 
   return (
@@ -66,11 +70,15 @@ const Navbar = () => {
             </button>
             {dropdown && <Dropdown languages={languages} dropdown={dropdown} setDropdown={setDropdown} />}
 
-            <button className="text-lg bg-[#607d8b] text-white  duration-500 px-6 py-2 mx-4 flex  items-center gap-x-1.5">
+            <button onClick={() => setModalActive(!modalActive)} className="text-lg bg-[#607d8b] text-white  duration-500 px-6 py-2 mx-4 flex  items-center gap-x-1.5">
               <BsFillDoorOpenFill size={20} />
               Войти
             </button>
-
+            {
+              <ModalPopap logo={logo} active={modalActive} setActive={setModalActive}>
+                Hello
+              </ModalPopap>
+            }
           </ul>
         </nav>
       </div>

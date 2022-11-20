@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Navbar from "./components/Navbar";
-import Signin from "./components/SignIn";
+import Signin from "./components/SingIn";
 
 function App() {
 
