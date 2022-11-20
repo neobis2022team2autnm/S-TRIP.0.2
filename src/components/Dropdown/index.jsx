@@ -23,7 +23,7 @@ function Dropdown({ dropdown, setDropdown }) {
     }
   };
   return (
-    <button className="absolute top-20 right-96 z-50 bg-white">
+    <button className="absolute top-20 right-[250px] z-50 bg-white">
       <ul
         className={
           dropdown
@@ -35,7 +35,7 @@ function Dropdown({ dropdown, setDropdown }) {
           return (
             <li key={el.code}>
               <button
-                className="px-4 flex  items-center gap-x-1.5 py-1 hover:bg-gray-100 border-b text-black"
+                className="px-4 flex items-center gap-x-1.5 py-1 hover:bg-gray-100 border-b text-black"
                 onClick={() => {
                   handleClose(el.code);
                 }}

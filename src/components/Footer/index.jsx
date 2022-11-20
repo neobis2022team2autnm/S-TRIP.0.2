@@ -6,11 +6,14 @@ import {
   FaInstagram,
   FaTwitterSquare,
 } from "react-icons/fa";
-
+import whatsapp from '../../assets/icons/icon-whatsapp.png';
+import TechSupport from "../TechSupport";
 
 
 
 const Footer = () => {
+
+  const [techActive, setTechActive] = useState(false)
 
   return (
     <div className='footer'>
@@ -71,7 +74,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
+      <button onClick={() => setTechActive(!techActive)} className='fixed bottom-12 right-6'>
+        <img className="w-20" src={whatsapp} alt='question' />
+      </button>
+      <TechSupport active={techActive} setActive={setTechActive} />
     </div>
   );
 };
