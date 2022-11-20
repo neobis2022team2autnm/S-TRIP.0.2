@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {},
   },
+  plugins: [require('tailwind-scrollbar-hide')],
   variants: {
     extend: {
       display: ['group-focus']
