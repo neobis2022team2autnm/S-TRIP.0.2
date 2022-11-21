@@ -14,13 +14,13 @@ const Home = () => {
     <>
       <Navigation />
       <SearchBar/>
-      <Slider title={'Регионы'} desc={'Каждая регион богат красивой природой и историей'} data={regions} />
-      <Slider title={'Блоги'} desc={'Лучшие блоги наших пользователей на S-TRIP'} data={articles} />
+      <Slider title={'Регионы'} desc={'Каждая регион богат красивой природой и историей'} data={regions} id='slider-1' />
+      <Slider title={'Блоги'} desc={'Лучшие блоги наших пользователей на S-TRIP'} data={articles} id='slider-2'/>
       <Albom />
-      <Slider title={'Кафе и рестораны'} desc={'Места где готовят самую вкусную еду'} data={foodPlace} />
+      <Slider title={'Кафе и рестораны'} desc={'Места где готовят самую вкусную еду'} data={foodPlace} id='slider-3' />
       <Lifehack />
       <News />
-      <Slider title={'Отели и хостелы'} desc={'Места отдохнуть или переночевать'} data={reluxPlace} />
+      <Slider title={'Отели и хостелы'} desc={'Места отдохнуть или переночевать'} data={reluxPlace} id='slider-4' />
     </>
   );
 };
