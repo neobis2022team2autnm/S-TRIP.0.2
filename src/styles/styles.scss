@@ -13,8 +13,17 @@
 
 
 [class*="__container"] {
+  background-color: white;
   margin: 20px 0;
   max-width: 1250px;
   margin: 20px auto;
   padding: 0 15px;
+}
+[class*="__bg"] {
+  background-color: white;
+ 
+}
+[class*="__bgApp"] {
+  background-color: black;
+ 
 }

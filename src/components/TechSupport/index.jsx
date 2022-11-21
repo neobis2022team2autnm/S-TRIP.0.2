@@ -8,8 +8,8 @@ import whatsapp from '../../assets/icons/icon-whatsapp.png';
 
 const TechSupport = ({ active, setActive }) => {
   return (
-    <div className={active ? "z-50 w-[400px] h-[422px] rounded-lg  bg-white fixed right-20 bottom-[100px] " : "d-none"}>
-      <div className='bg-[#607d8b] w-full text-white p-4'>
+    <div className={active ? "z-50 w-[400px] h-[422px] rounded-lg  bg-white fixed right-20 bottom-[100px] " : "hidden"}>
+      <div className={active?'bg-[#607d8b] w-full text-white p-4': "flex-none"}>
         <img className='h-[80px] rounded-full' src={logo} alt="user" />
         <h1 className='py-1 text-[25px]'>Здравствуйте ! 👋</h1>
         <p>Если есть вопросы , напишите нам в Whats-App</p>
