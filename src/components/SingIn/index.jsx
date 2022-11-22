@@ -1,23 +1,28 @@
+//import React and additional dependencies
 import { useEffect, useRef } from "react";
+
+//import components
 import { LoginByGoogle } from "../../port/index";
 
-const Singin = ({setActive}) => {
+export const Signin = ({ status, active, setActive }) => {
   const googleBtn = useRef(null);
+
   const handleCallbackResponse = (response) => {
     LoginByGoogle(response.credential);
-  }
+  };
 
   useEffect(() => {
-    /* global google */
+    /*global google */
     google.accounts.id.initialize({
-      client_id: '389304183889-m72ksip97kttaov9jkd86anlkkgiphgh.apps.googleusercontent.com',
-      callback: handleCallbackResponse
-    })
+      client_id:
+        "389304183889-m72ksip97kttaov9jkd86anlkkgiphgh.apps.googleusercontent.com",
+      callback: handleCallbackResponse,
+    });
 
-    google.accounts.id.renderButton(
-      googleBtn.current,
-      { theme: 'outline', size: 'large' }
-    )
+    google.accounts.id.renderButton(googleBtn.current, {
+      theme: "outline",
+      size: "large",
+    });
 
   }, []);
 
@@ -28,11 +33,11 @@ const Singin = ({setActive}) => {
 
   return (
     <form onClick={handleSubmit}>
-      <div>
-        <div ref={googleBtn} />
+      <div className={"google_login"}>
+        <button ref={googleBtn} />
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default Singin;
+export default Signin;
