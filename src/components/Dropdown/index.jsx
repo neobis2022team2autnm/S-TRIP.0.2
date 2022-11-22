@@ -23,7 +23,7 @@ function Dropdown({ dropdown, setDropdown }) {
     }
   };
   return (
-    <button className="absolute top-20 right-[250px] z-50 bg-white">
+    <button className="absolute top-10 left-[20px] z-50 bg-white">
       <ul
         className={
           dropdown

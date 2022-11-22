@@ -14,7 +14,7 @@ const Lifehack = () => {
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                   <img class="lg:h-72 md:h-48 w-full object-cover object-center"
                     src="https://picsum.photos/id/188/720/400" alt="blog" />
-                  <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
+                  <div class="p-6 hover:bg-[#607d8b] hover:text-white transition duration-300 ease-in">
                     
                     <h1 class="text-2xl font-semibold mb-3">Cities are crowded</h1>
                     <p class="leading-relaxed mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -52,7 +52,7 @@ const Lifehack = () => {
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                   <img class="lg:h-72 md:h-48 w-full object-cover object-center"
                     src="https://picsum.photos/id/1016/720/400" alt="blog" />
-                  <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
+                  <div class="p-6 hover:bg-[#607d8b] hover:text-white transition duration-300 ease-in">
                     
                     <h1 class="text-2xl font-semibold mb-3">Mountains are alone</h1>
                     <p class="leading-relaxed mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -90,7 +90,7 @@ const Lifehack = () => {
                 <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                   <img class="lg:h-72 md:h-48 w-full object-cover object-center"
                     src="https://picsum.photos/id/1011/720/400" alt="blog" />
-                  <div class="p-6 hover:bg-indigo-700 hover:text-white transition duration-300 ease-in">
+                  <div class="p-6 hover:bg-[#607d8b] hover:text-white transition duration-300 ease-in">
                    
                     <h1 class="text-2xl font-semibold mb-3">Lakes are silent</h1>
                     <p class="leading-relaxed mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { CgKeyhole } from 'react-icons/cg';
 import { RiBookletLine } from 'react-icons/ri';
@@ -26,6 +27,8 @@ const languages = [
 ];
 
 const Navbar = () => {
+
+  const { t } = useTranslation()
 
   const { isLogged, user } = useSelector((state) => state.auth);
 
@@ -68,7 +71,7 @@ const Navbar = () => {
             </li>
 
             <button onMouseEnter={() => setDropdown(true)}
-              onMouseLeave={() => setDropdown(false)} className="text-lg bg-transparent border-2 border-stone-900 text-black  duration-500 px-6 py-2 mx-4 hover:bg-[#607d8b] text-black-700 hover:text-white py-2 px-4 hover:border-transparent rounded flex  items-center gap-x-1.5">
+              onMouseLeave={() => setDropdown(false)} className="relative text-lg bg-transparent border-2 border-stone-900 text-black  duration-500 px-6 py-2 mx-4 hover:bg-[#607d8b] text-black-700 hover:text-white py-2 px-4 hover:border-transparent rounded flex  items-center gap-x-1.5">
               <IoLanguageSharp size={20} />
               Языки
               {dropdown && <Dropdown languages={languages} dropdown={dropdown} setDropdown={setDropdown} />}
@@ -80,8 +83,8 @@ const Navbar = () => {
             </button>
             {
               <ModalPopap logo={logo} active={modalActive} setActive={setModalActive}>
-                {/* <Singin active={modalActive} setActive={setModalActive}/> */}
-                Авторизация через гугл
+                {/* <Singin active={modalActive} setActive={setModalActive} /> */}
+                Sign in
               </ModalPopap>
             }
           </ul>
