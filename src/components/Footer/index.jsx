@@ -76,8 +76,8 @@ const Footer = () => {
       </div>
       <button onClick={() => setTechActive(!techActive)} className='fixed bottom-12 right-6'>
         <img className="w-20" src={whatsapp} alt='question' />
+        <TechSupport active={techActive} setActive={setTechActive} />
       </button>
-      <TechSupport active={techActive} setActive={setTechActive} />
     </div>
   );
 };
