@@ -31,7 +31,7 @@ const Navbar = () => {
   const { t } = useTranslation()
 
   const { isLogged, user } = useSelector((state) => state.auth);
-
+  console.log(user)
 
   const [menu, setMenu] = useState(true);
   const [dropdown, setDropdown] = useState(false);
@@ -85,7 +85,7 @@ const Navbar = () => {
             </button>
             {
               <ModalPopap logo={logo} active={modalActive} setActive={setModalActive}>
-                {/* <Singin active={modalActive} setActive={setModalActive} /> */}
+                <Singin active={modalActive} setActive={setModalActive} />
                 Sign in
               </ModalPopap>
             }

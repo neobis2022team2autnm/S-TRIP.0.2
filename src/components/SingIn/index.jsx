@@ -1,43 +1,95 @@
-//import React and additional dependencies
-import { useEffect, useRef } from "react";
+// //import React and additional dependencies
+// import { useEffect, useRef } from "react";
 
-//import components
+// //import components
+// import { LoginByGoogle } from "../../port/index";
+
+// export const Signin = ({ status, active, setActive }) => {
+//   const googleBtn = useRef(null);
+
+//   const handleCallbackResponse = (response) => {
+//     LoginByGoogle(response.credential);
+//   };
+
+//   useEffect(() => {
+//     /*global google */
+//     google.accounts.id.initialize({
+//       client_id:
+//         "389304183889-m72ksip97kttaov9jkd86anlkkgiphgh.apps.googleusercontent.com",
+//       callback: handleCallbackResponse,
+//     });
+
+//     google.accounts.id.renderButton(googleBtn.current, {
+//       theme: "outline",
+//       size: "large",
+//     });
+
+//   }, []);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     setActive(false)
+//   };
+
+//   return (
+//     <form onClick={handleSubmit}>
+//       <div className={"google_login"}>
+//         <button ref={googleBtn} />
+//       </div>
+//     </form>
+//   );
+// };
+
+// export default Signin;
+
+
+// import logo from './logo.svg';
+// import './App.css';
+import { GoogleLogin } from '@react-oauth/google';
+import jwt_decode from "jwt-decode";
+import { useGoogleLogin } from '@react-oauth/google';
 import { LoginByGoogle } from "../../port/index";
+import axios from "axios"
 
-export const Signin = ({ status, active, setActive }) => {
-  const googleBtn = useRef(null);
+function App() {
 
-  const handleCallbackResponse = (response) => {
-    LoginByGoogle(response.credential);
-  };
+  const login = useGoogleLogin({
+    onSuccess: async respose => {
+      try {
+        const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+          headers: {
+            "Authorization": `Bearer ${respose.access_token}`
+          }
+        })
 
-  useEffect(() => {
-    /*global google */
-    google.accounts.id.initialize({
-      client_id:
-        "389304183889-m72ksip97kttaov9jkd86anlkkgiphgh.apps.googleusercontent.com",
-      callback: handleCallbackResponse,
-    });
+        console.log(res.data)
+      } catch (err) {
+        console.log(err)
 
-    google.accounts.id.renderButton(googleBtn.current, {
-      theme: "outline",
-      size: "large",
-    });
+      }
 
-  }, []);
+    }
+  }); 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setActive(false)
-  };
+  const onSuccess = (credentialResponse) => {
+    LoginByGoogle(credentialResponse.credential)
+  }
 
   return (
-    <form onClick={handleSubmit}>
-      <div className={"google_login"}>
-        <button ref={googleBtn} />
-      </div>
-    </form>
+    <div className="App">
+      <header className="App-header">
+        <button onClick={login}>
+          <i class="fa-brands fa-google"></i>
+          Continue with google
+        </button>
+        <GoogleLogin
+          onSuccess={onSuccess}
+          onError={() => {
+            console.log('Login Failed');
+          }} />
+      </header>
+    </div>
   );
-};
+}
 
-export default Signin;
+export default App;

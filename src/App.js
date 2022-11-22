@@ -7,7 +7,6 @@ import '../src/styles/styles.scss'
 
 
 function App() {
-
   return (
     <div classname='App'>
       <Navbar />
