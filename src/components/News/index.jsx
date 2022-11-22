@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const News = () => {
+
+  const { t } = useTranslation()
   return (
     <div className='news'>
       <div className='news-container'>
@@ -8,11 +11,11 @@ const News = () => {
           <div className='max-w-[1140px] mx-auto grid lg:grid-cols-3'>
             <div className='lg:col-span-2 my-4'>
               <h1 className='mt-8 md:text-4xl sm:text-3xl text-2xl font-bold py-2'>
-                Новости
+                {t('News')}
               </h1>
-              <p>Лучшие из лучших мероприятий, достопримечательностей и мероприятий, которые вы не захотите пропустить.</p>
+              <p>{t('The best of the best activities, attractions and activities you wont want to miss')}</p>
               <button className='bg-[#00df9a] text-black rounded-md font-medium w-[200px]  my-6 px-6 py-3'>
-                Перейти
+                {t('To learn more')}
               </button>
             </div>
             <div className='my-4'>

@@ -1,7 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { BiSearchAlt2 as Search } from "react-icons/bi";
 import bg from '../../assets/images/bg-search.png';
 
 const SearchBar = () => {
+
+  const { t } = useTranslation()
+
   return (
     <div className="searchbar">
       <div className="searchbar__container">
@@ -18,7 +22,7 @@ const SearchBar = () => {
                   <input
                     type="search"
                     class="form-control relative flex-auto min-w-0 block w-full text-center shadow-2xl  py-3 px-4 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-3xl transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    placeholder='Что вам интересно '
+                    placeholder={t('Search')}
                   />
                   <Search className="text-lg text-gray-700 pointer-events-none top-[30%] left-[3%] opacity-80 absolute group-focus-within:hidden" />
                 </div>

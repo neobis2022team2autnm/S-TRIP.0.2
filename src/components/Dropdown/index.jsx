@@ -1,5 +1,5 @@
-//import React hooks
 import React from "react";
+import i18next from "i18next";
 import ReactCountryFlag from "react-country-flag";
 import "./style.scss";
 
@@ -21,6 +21,7 @@ function Dropdown({ dropdown, setDropdown }) {
     if (dropdown) {
       setDropdown(!dropdown);
     }
+    i18next.changeLanguage(code);
   };
   return (
     <button className="absolute top-10 left-[20px] z-50 bg-white">

@@ -8,19 +8,23 @@ import Slider from '../../components/Slider';
 import {
   regions, articles, foodPlace, reluxPlace
 } from "../../api/mock-data/data";
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+
+  const { t } = useTranslation()
+
   return (
     <>
       <Navigation />
-      <SearchBar/>
-      <Slider title={'Регионы'} desc={'Каждая регион богат красивой природой и историей'} data={regions} id='slider-1' />
-      <Slider title={'Блоги'} desc={'Лучшие блоги наших пользователей на S-TRIP'} data={articles} id='slider-2'/>
+      <SearchBar />
+      <Slider title={t("Regions")} desc={t("Each region is rich in beautiful nature and history.")} data={regions} id='slider-1' />
+      <Slider title={t("Blogs")} desc={t("The best blogs of our users on S-TRIP")} data={articles} id='slider-2' />
       <Albom />
-      <Slider title={'Кафе и рестораны'} desc={'Места где готовят самую вкусную еду'} data={foodPlace} id='slider-3' />
-      <Lifehack />
+      <Slider title={t("Cafes and restaurants")} desc={t("Places with the most delicious food")} data={foodPlace} id='slider-3' />
+      < Lifehack />
       <News />
-      <Slider title={'Отели и хостелы'} desc={'Места отдохнуть или переночевать'} data={reluxPlace} id='slider-4' />
+      <Slider title={t("Hotels and hostels")} desc={t("Places to rest or sleep")} data={reluxPlace} id='slider-4' />
     </>
   );
 };
