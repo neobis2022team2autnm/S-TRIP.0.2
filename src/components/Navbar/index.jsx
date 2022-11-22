@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { CgKeyhole } from 'react-icons/cg';
@@ -12,6 +12,7 @@ import logo from '../../assets/images/logos/logo.medium.png'
 import Dropdown from '../Dropdown';
 import ModalPopap from '../Modal-Popap';
 import Singin from '../SingIn';
+import UserConfig from '../UserConfig';
 
 const languages = [
   {
@@ -26,15 +27,26 @@ const languages = [
   },
 ];
 
+const options = [
+  {
+    name: "Профиль",
+    navigate: '/profile'
+  },
+  {
+    name: "Выйти",
+  },
+];
+
 const Navbar = () => {
 
   const { t } = useTranslation()
 
   const { isLogged, user } = useSelector((state) => state.auth);
-  console.log(user)
+
 
   const [menu, setMenu] = useState(true);
   const [dropdown, setDropdown] = useState(false);
+  const [userInfo, setUserInfo] = useState(false);
   const [modalActive, setModalActive] = useState(false);
 
 
@@ -43,9 +55,9 @@ const Navbar = () => {
       <div className="navbar__container">
         <nav className="p-5 bg-white shadow md:flex md:items-center md:justify-between">
           <div className="flex justify-between items-center text-black">
-            <h1 className="w-full text-4xl font-bold text-[#00df9a]">
+            <Link to='/' className="w-full text-4xl font-bold text-[#00df9a]">
               S-TRIP.
-            </h1>
+            </Link>
 
             <span onClick={() => setMenu(!menu)} className="text-3xl cursor-pointer mx-2 md:hidden block">
               <GiHamburgerMenu />
@@ -79,14 +91,27 @@ const Navbar = () => {
               {dropdown && <Dropdown languages={languages} dropdown={dropdown} setDropdown={setDropdown} />}
             </button>
 
-            <button onClick={() => setModalActive(!modalActive)} className="text-lg bg-[#607d8b] text-white  duration-500 px-6 py-2 mx-4 flex  items-center gap-x-1.5">
-              <BsFillDoorOpenFill size={20} />
-              {t('Login')}
-            </button>
+            {
+              isLogged
+                ?
+                <div
+                  onMouseEnter={() => setUserInfo(true)}
+                  onMouseLeave={() => setUserInfo(false)}
+                  style={{ width: '65px', height: '65px', border: '3px solid #00df9a', borderRadius: '50%', padding: '2px', position: 'relative' }}>
+
+                  <img style={{ borderRadius: '50%' }} src={user.picture} alt='User' />
+
+                  {userInfo && <UserConfig options={options} userInfo={userInfo} setUserInfo={setUserInfo} />}
+                </div>
+                :
+                <button onClick={() => setModalActive(!modalActive)} className="text-lg bg-[#607d8b] text-white  duration-500 px-6 py-2 mx-4 flex  items-center gap-x-1.5">
+                  <BsFillDoorOpenFill size={20} />
+                  {t('Login')}
+                </button>
+            }
             {
               <ModalPopap logo={logo} active={modalActive} setActive={setModalActive}>
                 <Singin active={modalActive} setActive={setModalActive} />
-                Sign in
               </ModalPopap>
             }
           </ul>

@@ -1,45 +1,36 @@
 import React from "react";
 import i18next from "i18next";
 import ReactCountryFlag from "react-country-flag";
-import "./style.scss";
 
 
-function Dropdown({ languages, dropdown, setDropdown }) {
+function UserConfig({ options, userInfo, setUserInfo }) {
 
-  console.log('dropdown' + dropdown)
+  console.log('userInfo' + userInfo)
 
 
   const handleClose = (code) => {
-    if (dropdown) {
-      setDropdown(!dropdown);
+    if (userInfo) {
+      setUserInfo(!userInfo);
     }
-    i18next.changeLanguage(code);
   };
   return (
     <button className="absolute top-10 left-[20px] z-50 bg-white">
       <ul
         className={
-          dropdown
+          userInfo
             ? "services-submenu clicked text-left border rounded"
             : "services-submenu"
         }
       >
-        {languages.map((el) => {
+        {options.map((el) => {
           return (
             <li key={el.code}>
               <button
-                className="px-4 flex items-center gap-x-1.5 py-1 hover:bg-gray-100 border-b text-black"
+                className="px-4 flex items-center gap-x-1.5 text-xl py-1 hover:bg-gray-100 border-b text-black"
                 onClick={() => {
                   handleClose(el.code);
                 }}
               >
-                <ReactCountryFlag
-                  countryCode={el.icon}
-                  svg
-                  cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/1x1/"
-                  cdnSuffix="svg"
-                  title="US"
-                />
                 {el.name}
               </button>
             </li>
@@ -50,4 +41,4 @@ function Dropdown({ languages, dropdown, setDropdown }) {
   );
 }
 
-export default Dropdown;
+export default UserConfig;

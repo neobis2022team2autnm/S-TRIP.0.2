@@ -69,7 +69,7 @@ function App() {
       }
 
     }
-  }); 
+  });
 
   const onSuccess = (credentialResponse) => {
     LoginByGoogle(credentialResponse.credential)
@@ -77,12 +77,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <button onClick={login}>
-          <i class="fa-brands fa-google"></i>
-          Continue with google
-        </button>
+      <header className="App-header flex justify-center ">
         <GoogleLogin
+          onClick={login}
           onSuccess={onSuccess}
           onError={() => {
             console.log('Login Failed');
