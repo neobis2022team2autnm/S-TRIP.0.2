@@ -7,7 +7,7 @@ import { Link, Outlet } from "react-router-dom";
 
 
 const Slider = ({ title, id, data, desc }) => {
-  console.log(data[0])
+ 
 
   const sliderLeft = (id) => {
     const slider = document.getElementById(id);

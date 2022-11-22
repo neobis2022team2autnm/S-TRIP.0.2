@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import '../src/styles/styles.scss'
 import RegionPage from "./pages/RegionPage";
 import { useState } from "react";
+import Profile from "./pages/ProfilePage";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path="/:regionId" element={<RegionPage updateData={updateData}/>}/>
+        <Route path="/profile" element={<Profile/>}/>
       </Routes>
       <Footer />
     
