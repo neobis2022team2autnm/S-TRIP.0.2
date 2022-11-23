@@ -1,7 +1,7 @@
 import React from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { BiCheckCircle } from "react-icons/bi";
-import { Link, Outlet } from "react-router-dom";
+import { Link,} from "react-router-dom";
 
 
 
@@ -55,7 +55,7 @@ const Slider = ({ title, id, data, desc }) => {
                   </span>
                 </div>
                 </Link>
-                <Outlet context={{bg:el.img}}/>
+               
                 </>
               ))}
             </div>
