@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { TfiMapAlt } from "react-icons/tfi";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoRestaurantOutline } from 'react-icons/io5'
@@ -35,9 +36,9 @@ const Navigation = () => {
               <div className="inline-block group">
                 <li className="flex  items-center justify-center px-[30px]  space-x-2 mr-2 bg-transparent group-hover:bg-[#9ca3af]  text-[#607D8B] font-semibold hover:text-white py-2 md:py-4 border border-[#607D8B] hover:border-transparent rounded-lg">
                   <TfiMapAlt className="text-2xl" />
-                  <a className="text=xl text-[#607D8B] group-hover:text-white" src="#">
+                  <Link to='/toursPage' className="text=xl text-[#607D8B] group-hover:text-white" src="#">
                     {t('Tours')}
-                  </a>
+                  </Link>
                 </li>
               </div>
               <div className="inline-block group">
