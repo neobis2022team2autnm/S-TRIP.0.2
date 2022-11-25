@@ -12,7 +12,10 @@ export const auth = createAsyncThunk(
   "auth/auth",
   async (data, { rejectWithValue }) => {
     try {
-      const response = await API.post("/google/", data);
+      const response = await API.post("/users/google/", {
+        auth_token: data
+      });
+      console.log(response);
       return response.data;
     } catch (e) {
       console.log(e);

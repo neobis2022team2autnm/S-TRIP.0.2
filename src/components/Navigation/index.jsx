@@ -1,12 +1,17 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { TfiMapAlt } from "react-icons/tfi";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoRestaurantOutline } from 'react-icons/io5'
 import { BsJournalBookmark } from 'react-icons/bs'
 import { SlArrowRight } from "react-icons/sl";
+import { useTranslation } from 'react-i18next';
 
 
 const Navigation = () => {
+
+  const { t } = useTranslation()
+
   const [nav, setNav] = useState(false)
 
   const sliderRight = () => {
@@ -31,16 +36,16 @@ const Navigation = () => {
               <div className="inline-block group">
                 <li className="flex  items-center justify-center px-[30px]  space-x-2 mr-2 bg-transparent group-hover:bg-[#9ca3af]  text-[#607D8B] font-semibold hover:text-white py-2 md:py-4 border border-[#607D8B] hover:border-transparent rounded-lg">
                   <TfiMapAlt className="text-2xl" />
-                  <a className="text=xl text-[#607D8B] group-hover:text-white" src="#">
-                    Туры
-                  </a>
+                  <Link to='/toursPage' className="text=xl text-[#607D8B] group-hover:text-white" src="#">
+                    {t('Tours')}
+                  </Link>
                 </li>
               </div>
               <div className="inline-block group">
                 <li className="  flex space-x-2 mr-2 px-[30px]  justify-center items-center bg-transparent group-hover:bg-[#9ca3af]  text-[#607D8B] font-semibold hover:text-white py-2 md:py-4  border border-[#607D8B] hover:border-transparent rounded-lg">
                   <AiOutlineHome size={25} />
                   <a className="text=xl text-[#607D8B] group-hover:text-white" src="#">
-                    Отели
+                    {t('Hotels')}
                   </a>
                 </li>
               </div>
@@ -48,7 +53,7 @@ const Navigation = () => {
                 <li className=" flex space-x-2 mr-2 px-[30px] justify-center items-center bg-transparent group-hover:bg-[#9ca3af]  text-[#607D8B] font-semibold hover:text-white py-2 md:py-4  border border-[#607D8B] hover:border-transparent rounded-lg">
                   <IoRestaurantOutline size={25} />
                   <a className="text=xl text-[#607D8B] group-hover:text-white" src="#">
-                    Рестораны
+                    {t('Restaurants')}
                   </a>
                 </li>
               </div>
@@ -56,7 +61,7 @@ const Navigation = () => {
                 <li className=" flex space-x-2 items-center px-[30px] bg-transparent group-hover:bg-[#9ca3af]  text-[#607D8B] font-semibold hover:text-white py-2 md:py-4 justify-center border border-[#607D8B] hover:border-transparent rounded-lg">
                   <BsJournalBookmark size={25} />
                   <a className="text=xl text-[#607D8B] group-hover:text-white" src="#">
-                    Фото альбом
+                    {t('Albums')}
                   </a>
                 </li>
               </div>

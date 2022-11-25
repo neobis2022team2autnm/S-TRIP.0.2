@@ -1,13 +1,17 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Lifehack = () => {
+
+const {t} = useTranslation()
+
   return (
     <div className="lifehack">
       <div className="lifehack__container">
         <div class="md:h-full flex items-center text-gray-600">
           <div class="container px-5 pt-24 mx-auto">
             <div class="text-center mb-12">
-              <h1 class="text-4xl md:text-5xl text-gray-700 font-semibold">Популярные лайфхаки</h1>
+              <h1 class="text-4xl md:text-5xl text-gray-700 font-semibold"> {t('Popular life hacks')}</h1>
             </div>
             <div class="flex flex-wrap -m-4">
               <div class="p-4 sm:w-1/2 lg:w-1/3">
