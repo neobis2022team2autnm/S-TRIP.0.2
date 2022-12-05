@@ -3,7 +3,7 @@ import React from "react";
 const Cards = ({data}) => {
   return (
     <>
-      <div class="flex flex-col">
+      {/* <div class="flex flex-col">
         {data.map(el=>(
              <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
                     <img
@@ -22,8 +22,10 @@ const Cards = ({data}) => {
    
         ))}
        
-      </div>
+      </div> */}
     </>
+
+    
   );
 };
 

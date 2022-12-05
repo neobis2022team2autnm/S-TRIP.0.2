@@ -1,12 +1,12 @@
 import React from "react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-import { BiCheckCircle } from "react-icons/bi";
+//import { BiCheckCircle } from "react-icons/bi";
 import { Link,} from "react-router-dom";
 
 
 
 
-const Slider = ({ title, id, data, desc }) => {
+const RegionSlider = ({ title, id, data, desc }) => {
  
 
   const sliderLeft = (id) => {
@@ -44,7 +44,7 @@ const Slider = ({ title, id, data, desc }) => {
             >
               {data.map((el) => (
                 <>
-                <div className="group inline-block relative w-[400px] md:w-[220px] lg:w-[270px]">
+                <Link to={`/${el.route}`}><div className="group inline-block relative w-[400px] md:w-[220px] lg:w-[270px]">
                   <img
                     className=" brightness-[80%] w-[400px] md:w-[220px] lg:w-[270px]  rounded-xl p-1 md:p-2 object-fill  cursor-pointer group-hover:scale-105 ease-out duration-300 "
                     src={el.img}
@@ -54,7 +54,8 @@ const Slider = ({ title, id, data, desc }) => {
                     {el.text}
                   </span>
                 </div>
-      
+                </Link>
+               
                 </>
               ))}
             </div>
@@ -69,4 +70,4 @@ const Slider = ({ title, id, data, desc }) => {
   );
 };
 
-export default Slider;
+export default RegionSlider;

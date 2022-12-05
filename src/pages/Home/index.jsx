@@ -9,6 +9,9 @@ import {
   regions, articles, foodPlace, reluxPlace
 } from "../../api/mock-data/data";
 import { useTranslation } from 'react-i18next';
+import RegionSlider from '../../components/RegionSlider';
+
+
 
 const Home = () => {
 
@@ -18,7 +21,7 @@ const Home = () => {
     <>
       <Navigation />
       <SearchBar />
-      <Slider title={t("Regions")} desc={t("Each region is rich in beautiful nature and history.")} data={regions} id='slider-1' />
+      <RegionSlider title={t("Regions")} desc={t("Each region is rich in beautiful nature and history.")} data={regions} id='slider-1' />
       <Slider title={t("Blogs")} desc={t("The best blogs of our users on S-TRIP")} data={articles} id='slider-2' />
       <Albom />
       <Slider title={t("Cafes and restaurants")} desc={t("Places with the most delicious food")} data={foodPlace} id='slider-3' />
