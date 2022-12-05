@@ -17,7 +17,7 @@ function App() {
   const updateData = (value) => {
     setBg( value )
   }
-
+    
 
   return (
     <div  style={!bg?{backgroundColor:"white"} :{backgroundImage:`url(${bg?.bg})`,}}>
@@ -27,7 +27,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/toursPage' element={<ToursPage />} />
-        <Route path="/:regionId" element={<RegionPage updateData={updateData}/>}/>
+        <Route path="/:region" element={<RegionPage updateData={updateData}/>}/>
         <Route path="/profile" element={<Profile/>}/>
       </Routes>
       <Footer />

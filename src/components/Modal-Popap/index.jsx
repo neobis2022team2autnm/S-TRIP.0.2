@@ -6,6 +6,9 @@ import "./style.scss";
 const ModalPopap = (props) => {
 
   const { isLogged } = useSelector((state) => state.auth);
+  
+  const stateLog= useSelector((state) => state.auth);
+  console.log(stateLog);
 
   useEffect(() => {
     if (isLogged) {
