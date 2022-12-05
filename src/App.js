@@ -3,35 +3,34 @@ import { Routes, Route } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ToursPage from "./pages/ToursPage";
-import './utils/i18n';
-import '../src/styles/styles.scss'
 import RegionPage from "./pages/RegionPage";
 import { useState } from "react";
 import Profile from "./pages/ProfilePage";
-
+import './utils/i18n';
+import '../src/styles/styles.scss';
 
 function App() {
 
-  const [bg, setBg]=useState(null);
+  const [bg, setBg] = useState(null);
 
   const updateData = (value) => {
-    setBg( value )
+    setBg(value)
   }
 
 
   return (
-    <div  style={!bg?{backgroundColor:"white"} :{backgroundImage:`url(${bg?.bg})`,}}>
-      
+    <div style={!bg ? { backgroundColor: "white" } : { backgroundImage: `url(${bg?.bg})`, }}>
+
       <Navbar />
 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/toursPage' element={<ToursPage />} />
-        <Route path="/:regionId" element={<RegionPage updateData={updateData}/>}/>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/:regionId" element={<RegionPage updateData={updateData} />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
-    
+
     </div>
   );
 }

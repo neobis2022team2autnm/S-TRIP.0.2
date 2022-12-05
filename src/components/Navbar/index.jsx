@@ -39,7 +39,7 @@ const options = [
 
 const Navbar = () => {
   const { isLogged, user } = useSelector((state) => state.auth);
-  const {t} = useTranslation()
+  const { t } = useTranslation()
   const [menu, setMenu] = useState(true);
   const [dropdown, setDropdown] = useState(false);
   const [userInfo, setUserInfo] = useState(false);
@@ -70,15 +70,15 @@ const Navbar = () => {
             }
           >
             <Link to={'/profile'}>
-            <li className="mx-4 my-6 md:my-0">
-              <a
-                href="#"
-                className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
-              >
-                <CgKeyhole size={20} />
-                {t('LifeHacks')}
-              </a>
-            </li>
+              <li className="mx-4 my-6 md:my-0">
+                <a
+                  href="#"
+                  className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
+                >
+                  <CgKeyhole size={20} />
+                  {t('LifeHacks')}
+                </a>
+              </li>
             </Link>
             <li className="mx-4 my-6 md:my-0">
               <a

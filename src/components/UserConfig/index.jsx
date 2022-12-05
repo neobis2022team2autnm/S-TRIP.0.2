@@ -1,17 +1,21 @@
 import React from "react";
-import i18next from "i18next";
-import ReactCountryFlag from "react-country-flag";
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 function UserConfig({ options, userInfo, setUserInfo }) {
 
-  console.log('userInfo' + userInfo)
+  const navigate = useNavigate();
 
+  console.log(options[0].name)
 
   const handleClose = (code) => {
     if (userInfo) {
       setUserInfo(!userInfo);
     }
+    // if (options[0]) {
+    //   navigate(options[0].navigate)
+    // }
   };
   return (
     <button className="absolute top-10 left-[20px] z-50 bg-white">
