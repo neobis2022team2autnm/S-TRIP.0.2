@@ -3,7 +3,7 @@ import NavProfile from '../../components/Profile/navProfile';
 
 const Profile = () => {
   return (
-    <div>
+    <div className='map__container'>
       <NavProfile/>
     </div>
   );

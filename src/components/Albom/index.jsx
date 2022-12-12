@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import './style.scss'
 
 const Albom = () => {
@@ -15,9 +16,11 @@ const Albom = () => {
               <h1 className="px-4 text-1xl sm:text-1xl md:text-2xl lg:text-1xl font-bold">
                 {t('Inspirational photo albums in S-TRIP')}
               </h1>
-              <button className="album__button my-10px rounded-full w-48 bg-light hover:bg-black-700 text-white font-bold py-2 px-6 border border-black-700 rounded py-2 px-4">
+              <Link to="/albumPage">
+                <button className="album__button my-10px rounded-full w-48 bg-light hover:bg-black-700 text-white font-bold py-2 px-6 border border-black-700 rounded py-2 px-4">
                 {t('To learn more')}
-              </button>
+                </button>
+              </Link>
             </div>
             <img
               className="w-full max-h-[350px] object-cover"

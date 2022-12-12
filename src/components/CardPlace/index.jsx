@@ -25,12 +25,17 @@ const CardPlace = ({ data }) => {
               {el.description}
             </p>
             <button className="cart">Подробнее</button>
+
+            <div>
+              <span>Comment</span>
+            </div>
           </div>
+
         </div>
 
       )
       )}
-      
+
     </>
   );
 };

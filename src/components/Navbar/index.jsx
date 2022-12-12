@@ -71,34 +71,35 @@ const Navbar = () => {
           >
             <Link to={'/profile'}>
             <li className="mx-4 my-6 md:my-0">
-              <a
-                href="#"
+              <span
+                
                 className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
               >
                 <CgKeyhole size={20} />
                 {t('LifeHacks')}
-              </a>
+              </span>
             </li>
             </Link>
             <li className="mx-4 my-6 md:my-0">
-              <a
-                href="#"
+              <span
+              
                 className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
               >
                 <RiBookletLine size={20} />
                 {t('Blog')}
-              </a>
+              </span>
             </li>
-            <li className="mx-4 my-6 md:my-0">
-              <a
-                href="#"
-                className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
-              >
-                <TbNews size={23} />
-                {t('News')}
-              </a>
-            </li>
-
+            <Link to="/map">
+              <li className="mx-4 my-6 md:my-0">
+                <a
+                  href="#"
+                  className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
+                >
+                  <TbNews size={23} />
+                  {t('News')}
+                </a>
+              </li>
+            </Link>
             <button onMouseEnter={() => setDropdown(true)}
               onMouseLeave={() => setDropdown(false)} className="relative text-lg bg-transparent border-2 border-stone-900 text-black  duration-500 px-6 py-2 mx-4 hover:bg-[#607d8b] text-black-700 hover:text-white hover:border-transparent rounded flex  items-center gap-x-1.5">
               <IoLanguageSharp size={20} />

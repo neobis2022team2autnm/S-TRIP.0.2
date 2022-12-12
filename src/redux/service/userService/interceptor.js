@@ -15,7 +15,7 @@ instance.interceptors.request.use(
     console.log(token);
     if (token) {
       // config.headers["Authorization"] = 'Bearer ' + token;  // for Spring Boot back-end
-      config.headers["Authorization"] = 'Bearer ' + token; // for Node.js Express back-end
+      config.headers["Authorization"] = 'Bearer' + token; // for Node.js Express back-end
     }
     return config;
   },
