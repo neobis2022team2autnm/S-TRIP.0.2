@@ -19,7 +19,7 @@ export const counterSlice = createSlice({
     setLoginByGoogle: (state, action) => {
       state.isLogged = true;
       state.user = action.payload.user;
-      localStorage.setItem("jwt-token", action.payload.token);
+      localStorage.setItem("jwt-token", action.payload.data);
     },
   },
 });

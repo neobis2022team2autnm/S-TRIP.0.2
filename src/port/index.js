@@ -5,6 +5,7 @@ import { setLoginByGoogle } from "../redux/reducers/authSlice";
 
 export const Login = (data) => {
   store.dispatch(auth(data));
+  console.log(data)
 };
 
 export const LoginByGoogle = (token) => {

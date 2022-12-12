@@ -6,6 +6,8 @@ import ToursPage from "./pages/ToursPage";
 import RegionPage from "./pages/RegionPage";
 import { useState } from "react";
 import Profile from "./pages/ProfilePage";
+import MapPage from "./pages/MapPage";
+import AlbumPage from "./pages/AlbumPage";
 import './utils/i18n';
 import '../src/styles/styles.scss';
 import Scheduler from "./pages/Scheduler";
@@ -30,7 +32,11 @@ function App() {
         <Route path="/:regionId" element={<RegionPage updateData={updateData} />} />
         <Route path="/profile" element={<Profile />} />
         <Route path='/scheduler' element={<Scheduler />} />
+        <Route path="/map" element={<MapPage/>}/>
+        
+        <Route path="/albumPage" element={<AlbumPage/>}/>
       </Routes>
+
       <Footer />
 
     </div>
