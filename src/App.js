@@ -8,6 +8,7 @@ import { useState } from "react";
 import Profile from "./pages/ProfilePage";
 import './utils/i18n';
 import '../src/styles/styles.scss';
+import Scheduler from "./pages/Scheduler";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/toursPage' element={<ToursPage />} />
         <Route path="/:regionId" element={<RegionPage updateData={updateData} />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path='/scheduler' element={<Scheduler />} />
       </Routes>
       <Footer />
 

@@ -113,10 +113,8 @@ const Navbar = () => {
                   onMouseEnter={() => setUserInfo(true)}
                   onMouseLeave={() => setUserInfo(false)}
                   style={{ width: '65px', height: '65px', border: '3px solid #00df9a', borderRadius: '50%', padding: '2px', position: 'relative' }}>
-
                   <img style={{ borderRadius: '50%' }} src={user.picture} alt='User' />
-
-                  {userInfo && <UserConfig options={options} userInfo={userInfo} setUserInfo={setUserInfo} />}
+                  {userInfo && <UserConfig userInfo={userInfo} setUserInfo={setUserInfo} />}
                 </div>
                 :
                 <button onClick={() => setModalActive(!modalActive)} className="text-lg bg-[#607d8b] text-white  duration-500 px-6 py-2 mx-4 flex  items-center gap-x-1.5">

@@ -2,37 +2,46 @@ export const regions = [
   {
     id: 1,
     img: './regions/chui.png',
+    bg: './regions/issykKul.jpg',
+    route:'chui'
 
   },
   {
     id: 2,
     img: './regions/osh.png',
-    bg: './regions/issykKul.jpg'
+    bg: './regions/issykKul.jpg',
+    route: 'osh'
   },
   {
     id: 7,
     img: './regions/talas.png',
-    bg: './regions/issykKul.jpg'
+    bg: './regions/issykKul.jpg',
+    route:'talas'
   },
   {
     id: 4,
     img: './regions/ik.png',
-    bg: './regions/issykKul.jpg'
+    bg: './regions/issykKul.jpg',
+    route:'issykKul'
+
   },
   {
     id: 5,
     img: './regions/naryn.png',
-    bg: './regions/issykKul.jpg'
+    bg: './regions/issykKul.jpg',
+    route: 'naryn'
   },
   {
     id: 6,
     img: './regions/jalal-abad.png',
-    bg: './regions/issykKul.jpg'
+    bg: './regions/issykKul.jpg',
+    route: 'jalalAbad'
   },
   {
     id: 3,
     img: './regions/batken.png',
-    bg: './regions/issykKul.jpg'
+    bg: './regions/issykKul.jpg',
+    route: 'batken'
   }
 ];
 

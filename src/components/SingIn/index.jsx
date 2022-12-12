@@ -63,11 +63,16 @@ function App() {
         })
 
         console.log(res.data)
+        // // Извлекаем данные пользователя из ответа
+        // const { name, email, picture } = res;
+
+        // // Сохраняем данные в localStorage
+        // localStorage.setItem('userName', name);
+        // localStorage.setItem('userEmail', email);
+        // localStorage.setItem('userPicture', picture);
       } catch (err) {
         console.log(err)
-
       }
-
     }
   });
 
