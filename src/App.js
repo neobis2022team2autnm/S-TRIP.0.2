@@ -7,7 +7,7 @@ import RegionPage from "./pages/RegionPage";
 import { useState } from "react";
 import Profile from "./pages/ProfilePage";
 import MapPage from "./pages/MapPage";
-import AlbumPage from "./pages/AlbumPage";
+import AlbumPage from "./pages/AlbomPage";
 import './utils/i18n';
 import '../src/styles/styles.scss';
 import Scheduler from "./pages/Scheduler";
@@ -20,20 +20,19 @@ function App() {
     setBg(value)
   }
 
+   console.log('route app', bg);
 
   return (
-    <div style={!bg ? { backgroundColor: "white" } : { backgroundImage: `url(${bg?.bg})`, }}>
+    <div style={!bg ? { backgroundColor: "white" } : { backgroundColor: '	#222024'}}>
 
       <Navbar />
 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/toursPage' element={<ToursPage />} />
-        <Route path="/:regionId" element={<RegionPage updateData={updateData} />} />
+        <Route path="/:region" element={<RegionPage updateData={updateData} />} />
         <Route path="/profile" element={<Profile />} />
         <Route path='/scheduler' element={<Scheduler />} />
-        <Route path="/map" element={<MapPage/>}/>
-        
         <Route path="/albumPage" element={<AlbumPage/>}/>
       </Routes>
 

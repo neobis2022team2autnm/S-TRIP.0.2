@@ -2,7 +2,7 @@ export const regions = [
   {
     id: 1,
     img: './regions/chui.png',
-    bg: './regions/issykKul.jpg',
+    bg: 'https://i.pinimg.com/736x/98/4c/75/984c752a69010639f1f6492077d1d4f5.jpg',
     route:'chui'
 
   },

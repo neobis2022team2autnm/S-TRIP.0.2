@@ -4,7 +4,7 @@ import TokenService from "./tokenService"
 const instance = axios.create({
   baseURL: "http://34.159.147.205",
   headers: {
-    "Content-Type": "application/json",
+    "Content-Type": "multipart/form-data",
   },
  
 });
@@ -12,10 +12,10 @@ const instance = axios.create({
 instance.interceptors.request.use(
   (config) => {
     const token = TokenService.getLocalAccessToken();
-    console.log(token);
+    console.log("token in interceptor",token);
     if (token) {
-      // config.headers["Authorization"] = 'Bearer ' + token;  // for Spring Boot back-end
-      config.headers["Authorization"] = 'Bearer' + token; // for Node.js Express back-end
+      // config.headers["x tunkka"] = 'Bearer ' + token;  // for Spring Boot back-end
+      config.headers["Authorization"] = 'Bearer ' + token; // for Node.js Express back-end
     }
     return config;
   },

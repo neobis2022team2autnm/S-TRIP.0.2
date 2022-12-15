@@ -4,7 +4,6 @@ import './style.scss'
 const CardPlace = ({ data }) => {
 
 
-  console.log(data);
   return (
     <>
       {data?.map((el) => (

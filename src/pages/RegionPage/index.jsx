@@ -6,11 +6,11 @@ import { useEffect } from 'react';
 import { getBatken, getChui, getIssykKul, getJalalAbad, getNaryn, getOsh, getTalas } from '../../redux/reducers/placeSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
-const RegionPage = ({ updateData }) => {
-
+const RegionPage = (props) => {
+  const { updateData } = props;
   const { region } = useParams();
 
-  console.log(typeof region)
+  console.log( region)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -51,12 +51,17 @@ const RegionPage = ({ updateData }) => {
 
   useEffect(() => {
     regions.forEach((item) => {
-      if (item.id === +region) updateData(item);
+      if (item.route === region){ 
+        updateData(item?.bg)
+      console.log(item?.bg)}
+
     });
+
     return () => {
       updateData(null)
     }
-  }, [region])
+    
+  }, [])
 
   const dataRegion = useSelector(state=> state.place[region])
   return (
