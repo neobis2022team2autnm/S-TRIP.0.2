@@ -16,14 +16,7 @@ function App() {
           }
         })
 
-        console.log(res.data)
-        // // Извлекаем данные пользователя из ответа
-        // const { name, email, picture } = res;
-
-        // // Сохраняем данные в localStorage
-        // localStorage.setItem('userName', name);
-        // localStorage.setItem('userEmail', email);
-        // localStorage.setItem('userPicture', picture);
+        console.log(res.data)   
       } catch (err) {
         console.log(err)
       }
@@ -32,6 +25,8 @@ function App() {
 
   const onSuccess = (credentialResponse) => {
     LoginByGoogle(credentialResponse.credential)
+    let decoded = jwt_decode(credentialResponse.credential)
+    localStorage.setItem('userPhoto', decoded.picture)
   }
 
   return (

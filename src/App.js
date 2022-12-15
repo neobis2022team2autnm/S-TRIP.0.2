@@ -11,6 +11,8 @@ import AlbumPage from "./pages/AlbumPage";
 import './utils/i18n';
 import '../src/styles/styles.scss';
 import Scheduler from "./pages/Scheduler";
+import LifehackPage from "./pages/LafehackPage";
+import InfoPage from "./pages/InfoPage";
 
 function App() {
 
@@ -28,14 +30,14 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/toursPage' element={<ToursPage />} />
+        <Route path='/toursPage' element={<ToursPage />} /> 
         <Route path="/:regionId" element={<RegionPage updateData={updateData} />} />
         <Route path="/profile" element={<Profile />} />
         <Route path='/scheduler' element={<Scheduler />} />
         <Route path="/map" element={<MapPage/>}/>
-        
         <Route path="/albumPage" element={<AlbumPage/>}/>
-      </Routes>
+        <Route path='/blog' element={<InfoPage/>}/>
+      </Routes> 
 
       <Footer />
 

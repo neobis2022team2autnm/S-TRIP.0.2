@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import UserConfig from '../UserConfig';
@@ -27,16 +27,6 @@ const languages = [
   },
 ];
 
-const options = [
-  {
-    name: "Профиль",
-    navigate: '/profile'
-  },
-  {
-    name: "Выйти",
-  },
-];
-
 const Navbar = () => {
   const { isLogged, user } = useSelector((state) => state.auth);
   const { t } = useTranslation()
@@ -44,7 +34,7 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   const [userInfo, setUserInfo] = useState(false);
   const [modalActive, setModalActive] = useState(false);
-
+  
   return (
     <div className="navbar">
       <div className="navbar__container">
@@ -70,34 +60,38 @@ const Navbar = () => {
             }
           >
             <Link to={'/profile'}>
-            <li className="mx-4 my-6 md:my-0">
-              <span
-                
-                className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
-              >
-                <CgKeyhole size={20} />
-                {t('LifeHacks')}
-              </span>
-            </li>
+              <li className="mx-4 my-6 md:my-0">
+                <span
+
+                  className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
+                >
+                  <CgKeyhole size={20} />
+                  {t('LifeHacks')}
+                </span>
+              </li>
             </Link>
             <li className="mx-4 my-6 md:my-0">
               <span
-              
+
                 className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
               >
-                <RiBookletLine size={20} />
-                {t('Blog')}
+                <Link to='/blog' className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
+>
+                  <RiBookletLine size={20} />
+                  {t('Blog')}
+                </Link>
+               
               </span>
             </li>
             <Link to="/map">
               <li className="mx-4 my-6 md:my-0">
-                <a
-                  href="#"
+                <Link
+                  to='/news'
                   className="text-xl hover:text-cyan-500 duration-500 flex  items-center gap-x-1.5"
                 >
                   <TbNews size={23} />
                   {t('News')}
-                </a>
+                </Link>
               </li>
             </Link>
             <button onMouseEnter={() => setDropdown(true)}
@@ -114,7 +108,7 @@ const Navbar = () => {
                   onMouseEnter={() => setUserInfo(true)}
                   onMouseLeave={() => setUserInfo(false)}
                   style={{ width: '65px', height: '65px', border: '3px solid #00df9a', borderRadius: '50%', padding: '2px', position: 'relative' }}>
-                  <img style={{ borderRadius: '50%' }} src={user.picture} alt='User' />
+                  <img style={{ borderRadius: '50%' }} src={localStorage.getItem('userPhoto')} alt='User' />
                   {userInfo && <UserConfig userInfo={userInfo} setUserInfo={setUserInfo} />}
                 </div>
                 :
